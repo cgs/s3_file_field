@@ -8,6 +8,7 @@ module S3FileField
       :access_key_id,
       :secret_access_key,
       :bucket,
+      :max_file_size,
       :prefix_to_clean,
       :region,
       :key_starts_with,

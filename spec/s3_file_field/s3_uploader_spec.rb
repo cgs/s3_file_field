@@ -42,6 +42,12 @@ module S3FileField
         S3Uploader.new(:access_key_id => "foo")
       end
 
+      it 'takes max_file_size configuration from S3FileField' do
+        S3FileField.config.max_file_size = 10.kilobytes
+        uploader = S3Uploader.new
+        expect(uploader.options[:max_file_size]).to eq(10.kilobytes)
+      end
+
       it 'overwrites defaults' do
         S3FileField.config.access_key_id = nil
         uploader = S3Uploader.new(:access_key_id => "foo")
